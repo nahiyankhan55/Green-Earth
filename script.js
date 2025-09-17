@@ -83,7 +83,7 @@ const renderCart = () => {
         <span>${item.name}</span>
         <span class="text-sm">৳${item.price} × ${item.quantity}</span>
       </div>
-      <button class="text-gray-400 hover:text-green-800">✕</button>
+      <button class="text-gray-400 hover:text-blue-800">✕</button>
     `;
 
     // Remove button
@@ -139,13 +139,13 @@ const showModal = (plant) => {
         <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl">✕</button>
 
         <img src="${plant.image}" alt="${plant.name}" class="w-full md:h-48 h-32 object-cover rounded-lg mb-4"/>
-        <h2 class="md:text-2xl text-xl font-bold text-green-800 mb-2">${plant.name}</h2>
+        <h2 class="md:text-2xl text-xl font-bold text-blue-800 mb-2">${plant.name}</h2>
         <p class="text-gray-600 mb-3 sm:text-base text-sm">${plant.description}</p>
         <div class="flex flex-col items-start gap-1 mb-3">
-          <p class="flex items-center gap-1 font-medium">Category:<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full">${plant.category}</span></p>
+          <p class="flex items-center gap-1 font-medium">Category:<span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">${plant.category}</span></p>
           <span class="font-semibold text-lg">Price: ৳${plant.price}</span>
         </div>
-        <button class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700" onclick="addToCart(${JSON.stringify(
+        <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700" onclick="addToCart(${JSON.stringify(
           plant
         ).replace(/"/g, '&quot;')})">Add to Cart</button>
       </div>
@@ -186,13 +186,13 @@ const renderPlants = async (plants) => {
       <div class="h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
         <img src="${plant.image}" alt="${plant.name}" class="h-full w-full object-cover rounded-md"/>
       </div>
-      <h3 class="font-bold text-green-800 cursor-pointer hover:underline">${plant.name}</h3>
+      <h3 class="font-bold text-blue-800 cursor-pointer hover:underline">${plant.name}</h3>
       <p class="text-sm text-gray-600">${plant.description.slice(0, 100)}...</p>
       <div class="flex justify-between items-center mt-3">
-        <span class="text-sm font-medium px-2 py-1 bg-green-100 text-green-700 rounded-full">${plant.category}</span>
+        <span class="text-sm font-medium px-2 py-1 bg-blue-100 text-blue-700 rounded-full">${plant.category}</span>
         <span class="font-semibold">৳${plant.price}</span>
       </div>
-      <button class="mt-4 bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Add to Cart</button>
+      <button class="mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Add to Cart</button>
     `;
 
     // Add to cart button
@@ -224,7 +224,7 @@ const loadCategories = async () => {
   // "All Trees" button
   const allBtn = document.createElement("li");
   allBtn.innerHTML = `
-    <button class="w-full text-left px-3 py-2 rounded-md bg-green-600 text-white hover:bg-green-400 hover:text-black">All Trees</button>
+    <button class="w-full text-left px-3 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-400 hover:text-black">All Trees</button>
   `;
   const allBtnEl = allBtn.querySelector("button");
   allBtnEl.addEventListener("click", async (e) => {
@@ -238,7 +238,7 @@ const loadCategories = async () => {
   categories.forEach(cat => {
     const li = document.createElement("li");
     li.innerHTML = `
-      <button class="w-full text-left px-3 py-2 hover:bg-green-400 rounded-md">
+      <button class="w-full text-left px-3 py-2 hover:bg-blue-400 rounded-md">
         ${cat.category_name}
       </button>
     `;
